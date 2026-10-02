@@ -109,7 +109,7 @@ void MyDataStore::buyCart(const std::string& username){
   if (cartIt == carts_.end()){
     return;
   }
-  vector<Product*>& cart = it->second;
+  vector<Product*>& cart = cartIt->second;
   vector<Product*>::iterator product_it = cart.begin();
   while(product_it !=cart.end()){
     Product* product = *product_it;
