@@ -18,7 +18,7 @@ std::set<std::string> parseStringToWords(string rawWords)
   rawWords = convToLower(rawWords);
   set<string> words;
   string word = "";
-  for (<static_cast> size_t i = 0; i < rawWords.size(); i++){
+  for (size_t i = 0; i < rawWords.size(); i++){
     if ((rawWords[i] >= '!' && rawWords[i] <= '/') || (rawWords[i] == ' ')){//splitting the word at each space and punctuation
       if (word.size() >=2){
         words.insert(word);
