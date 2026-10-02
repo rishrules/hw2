@@ -23,7 +23,7 @@ set<std::string> Book::keywords() const{
 std::string Book::displayString() const{
   std::ostringstream info;
 
-  info << name_ << '\n' << "Author: " << author_<< << " ISBN: " << ISBN_ << '\n' << price_ <<  " " << qty_ << " left.";
+  info << name_ << '\n' << "Author: " << author_<< " ISBN: " << ISBN_ << '\n' << price_ <<  " " << qty_ << " left.";
   return info.str();
 }
 
