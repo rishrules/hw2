@@ -16,9 +16,17 @@ class MyDataStore : public DataStore{
     //Reproduce the database file from the current Products and User values
     void dump(std::ostream& ofile);
 
+    void addCart(const std::string& username, Product* product);
+    std::vector<Product*> viewCart(const std::string& username) const;
+    void buyCart(const std::string& username);
   private:
-
-
+  std::vector<Product*> products_;
+  std::vector<User*> users_;
+  std::map<std::string, std::set<Product*>> keyW_;//basically for each keyword->products with that keyword
+  std::map<std::string, std::vector<User*>> user_map_;
+  std::map<std::string, std::vector<Product*>> carts_;
+  std::vector<Product*> lastHits_;
+  
 };
 
 
