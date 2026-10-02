@@ -1,5 +1,5 @@
 #ifndef MYDATASTORE_H
-#define MYDATASTORE_H_H
+#define MYDATASTORE_H
 #include <map>
 #include <set>
 #include <string>

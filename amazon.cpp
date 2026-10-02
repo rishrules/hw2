@@ -18,6 +18,7 @@ struct ProdNameSorter {
     }
 };
 void displayProducts(vector<Product*>& hits);
+void displayCart(vector<Product*>& cart);
 
 int main(int argc, char* argv[])
 {
@@ -119,7 +120,7 @@ int main(int argc, char* argv[])
               }
               else{
                 vector<Product*> cart = ds.viewCart(username);
-                displayProducts(cart);
+                displayCart(cart);
               }
             }
             else if (cmd == "BUYCART"){
@@ -139,6 +140,17 @@ int main(int argc, char* argv[])
 
     }
     return 0;
+}
+
+void displayCart(vector<Product*>& cart)
+{
+    int resultNo = 1;
+    for(vector<Product*>::iterator it = cart.begin(); it != cart.end(); ++it) {
+        cout << "Item " << resultNo << endl;
+        cout << (*it)->displayString() << endl;
+        cout << endl;
+        resultNo++;
+    }
 }
 
 void displayProducts(vector<Product*>& hits)

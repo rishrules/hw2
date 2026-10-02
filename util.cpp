@@ -19,7 +19,8 @@ std::set<std::string> parseStringToWords(string rawWords)
   set<string> words;
   string word = "";
   for (size_t i = 0; i < rawWords.size(); i++){
-    if ((rawWords[i] >= '!' && rawWords[i] <= '/') || (rawWords[i] == ' ')){//splitting the word at each space and punctuation
+    unsigned char ch = static_cast<unsigned char>(rawWords[i]);
+    if (std::ispunct(ch) || std::isspace(ch)){//splitting the word at each whitespace and punctuation
       if (word.size() >=2){
         words.insert(word);
       }

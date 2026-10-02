@@ -16,7 +16,9 @@ Book::~Book(){
 
 set<std::string> Book::keywords() const{
   set<string> k = parseStringToWords(name_);
-  k.insert(ISBN_);
+  set<string> a = parseStringToWords(author_);
+  k = setUnion(k, a);
+  k.insert(convToLower(ISBN_));
   return k;
 }
 

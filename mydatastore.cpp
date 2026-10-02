@@ -34,13 +34,13 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     return vector<Product*>();
   }
   if (type == 0){
-    map<string, set<Product*> >::iterator it = keyW_.find(terms[0]);
+    map<string, set<Product*> >::iterator it = keyW_.find(convToLower(terms[0]));
     if (it == keyW_.end()){
       return vector<Product*>();
     }
     search_result = it->second;
     for (size_t i = 1; i < terms.size();i++){
-      it = keyW_.find(terms[i]);
+      it = keyW_.find(convToLower(terms[i]));
       if (it == keyW_.end()){//that is if any AND term doesnt exist in keyw, we return empty list
         return vector<Product*>();
       }
@@ -52,7 +52,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
   }
   else if (type == 1){
     for (size_t i = 0; i < terms.size(); i++){
-      map<string, set<Product*> >::iterator it = keyW_.find(terms[i]);
+      map<string, set<Product*> >::iterator it = keyW_.find(convToLower(terms[i]));
       if (it != keyW_.end()){
         search_result.insert((it->second).begin(), (it->second).end());
       }

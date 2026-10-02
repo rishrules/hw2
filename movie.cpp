@@ -16,14 +16,14 @@ Movie::~Movie(){
 
 set<std::string> Movie::keywords() const{
   set<string> k = parseStringToWords(name_);
-  k.insert(genre_);
+  k.insert(convToLower(genre_));
   return k;
 }
 
 std::string Movie::displayString() const{
   std::ostringstream info;
 
-  info << name_ << '\n' << "Genre: " << genre_<< "Rating: " << rating_ << '\n' << price_ << " " << qty_ << "left.";
+  info << name_ << '\n' << "Genre: " << genre_<< " Rating: " << rating_ << '\n' << price_ << " " << qty_ << " left.";
   return info.str();
 }
 

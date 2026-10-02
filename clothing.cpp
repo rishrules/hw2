@@ -23,7 +23,7 @@ set<std::string> Clothing::keywords() const{
 std::string Clothing::displayString() const{
   std::ostringstream info;
 
-  info << name_ << '\n' << "Size: " << size_<< "Brand: " << brand_ << '\n' << price_ << " " << qty_ << "left.";
+  info << name_ << '\n' << "Size: " << size_<< " Brand: " << brand_ << '\n' << price_ << " " << qty_ << " left.";
   return info.str();
 }
 
