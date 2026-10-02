@@ -1,7 +1,12 @@
 #ifndef MYDATASTORE_H
 #define MYDATASTORE_H_H
+#include <map>
+#include <set>
+#include <string>
+#include <vector>
 #include "datastore.h"
-
+#include "product.h"
+#include "user.h"
 class MyDataStore : public DataStore{
   public:
     ~MyDataStore();
@@ -23,9 +28,8 @@ class MyDataStore : public DataStore{
   std::vector<Product*> products_;
   std::vector<User*> users_;
   std::map<std::string, std::set<Product*>> keyW_;//basically for each keyword->products with that keyword
-  std::map<std::string, std::vector<User*>> user_map_;
+  std::map<std::string, User*> user_map_;
   std::map<std::string, std::vector<Product*>> carts_;
-  std::vector<Product*> lastHits_;
   
 };
 
