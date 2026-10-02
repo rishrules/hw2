@@ -28,5 +28,6 @@ std::string Movie::displayString() const{
 }
 
 void Movie::dump(std::ostream& os) const{
+  Product::dump(os);
   os << genre_ << "\n" << rating_ << endl;
 }

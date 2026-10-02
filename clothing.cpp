@@ -28,5 +28,6 @@ std::string Clothing::displayString() const{
 }
 
 void Clothing::dump(std::ostream& os) const{
+  Product::dump(os);
   os << size_ << "\n" << brand_ << endl;
 }
