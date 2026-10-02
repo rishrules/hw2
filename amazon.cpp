@@ -104,11 +104,11 @@ int main(int argc, char* argv[])
             else if (cmd == "ADD"){
               string username;
               int hit_index;
-              if (!(ss >> username >> hit_index) ||hitIndex < 1 || static_cast<size_t>(hitIndex) > hits.size()){
+              if (!(ss >> username >> hit_index) ||hit_index < 1 || static_cast<size_t>(hit_index) > hits.size()){
                 cout << "Invalid request" << endl;
               }
               else{
-                ds.addCart(username, hits[hitIndex - 1]);
+                ds.addCart(username, hits[hit_index - 1]);
               }
             }
             else if (cmd == "VIEWCART"){
